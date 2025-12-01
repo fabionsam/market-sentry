@@ -107,7 +107,8 @@ Para testar os alertas sem utilizar sua conta de e-mail real, recomendo o uso do
 * [ ] **Edição de ativos configurados:** Adicionar opção de editar ativos configurados.
 * [ ] **Integração com Telegram/WhatsApp:** Enviar alertas via Bot além do e-mail.
 * [ ] **Dockerização:** Criar um `Dockerfile` para rodar a aplicação em containers.
-* [ ] **Gerenciamento de Logs:** Interface para visualizar os logs de erro/execução do Worker dentro do Dashboard.
+* [ ] **Gerenciamento de Logs:** Interface para visualizar os logs de erro/execução do Worker.
+* [ ] **Minimizar para a Bandeja (System Tray):** Rodar a aplicação em segundo plano (ícone perto do relógio) em vez de uma janela de console, evitando fechamentos acidentais.
 
 ---
 
