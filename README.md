@@ -1,6 +1,6 @@
 # 🛡️ Market Sentry
 
-**Market Sentry** é uma aplicação robusta e moderna para monitoramento de ativos da B3 (Ações) e Câmbio em tempo real. O sistema monitora cotações, armazena histórico de preços e envia alertas automáticos por e-mail quando oportunidades de Compra ou Venda são identificadas.
+Aplicação para monitoramento de ativos da B3. Onde você pode configurar preços de compra/venda e receber alertas por e-mail. 
 
 O projeto utiliza uma arquitetura **"All-in-One"**, onde uma API .NET roda em background como um Worker Service e, simultaneamente, serve o Frontend em Angular, permitindo que a aplicação final seja distribuída como um **único executável (.exe)** sem necessidade de instalação complexa.
 
@@ -43,7 +43,7 @@ Pré-requisitos: **.NET SDK** e **Node.js** instalados.
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/seu-usuario/MarketSentry.git](https://github.com/seu-usuario/MarketSentry.git)
+    git clone https://github.com/fabionsam/market-sentry.git
     cd MarketSentry
     ```
 
@@ -87,7 +87,7 @@ Para facilitar, incluímos um script que faz todo o trabalho sujo (compila o Ang
 
 ## 📧 Testando o Envio de E-mail
 
-Para testar os alertas sem utilizar sua conta de e-mail real, recomendamos o uso do **Ethereal Email** ou **Papercut SMTP**.
+Para testar os alertas sem utilizar sua conta de e-mail real, recomendo o uso do **Ethereal Email** ou **Papercut SMTP**.
 
 ### Usando o Ethereal (Online)
 1.  Acesse [https://ethereal.email/](https://ethereal.email/).
