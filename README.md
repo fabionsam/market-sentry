@@ -25,7 +25,7 @@ O projeto utiliza uma arquitetura **"All-in-One"**, onde uma API .NET roda em ba
 
 ## ✨ Funcionalidades
 
-* ✅ **Monitoramento Contínuo**: Verifica cotações a cada 30 segundos automaticamente.
+* ✅ **Monitoramento Contínuo**: Verifica cotações a cada 60 segundos automaticamente.
 * ✅ **Multi-API**: Suporte configurável para múltiplos provedores de dados (ex: Brapi, HgBrasil).
 * ✅ **Alertas por E-mail**: Dispara notificações com template HTML personalizado quando o preço atinge o alvo.
 * ✅ **Dashboard Interativo**:
