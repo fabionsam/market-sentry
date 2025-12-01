@@ -112,4 +112,5 @@ Aqui estão algumas sugestões para evoluir o projeto:
 
 ---
 
-Desenvolvido com ☕ e [![My Skills](https://skillicons.dev/icons?i=ts,cs,angular,html,css,sqlite)](https://skillicons.dev)
+Desenvolvido com ☕ e <br/>
+[![My Skills](https://skillicons.dev/icons?i=ts,cs,angular,html,css,sqlite)](https://skillicons.dev)
