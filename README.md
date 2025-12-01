@@ -81,6 +81,7 @@ Para facilitar, incluímos um script que faz todo o trabalho sujo (compila o Ang
 2.  Dê **dois cliques** nele.
 3.  Aguarde o processo terminar.
 4.  Uma pasta chamada `Instalador_MarketSentry` será criada contendo o `.exe` pronto para uso.
+5.  Nessa pasta existirá um arquivo chamado `Iniciar_Sistema` para facilitar a inicialização do sistema.
 
 ---
 
