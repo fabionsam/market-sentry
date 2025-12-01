@@ -81,6 +81,7 @@ Para facilitar, incluímos um script que faz todo o trabalho sujo (compila o Ang
 2.  Dê **dois cliques** nele.
 3.  Aguarde o processo terminar.
 4.  Uma pasta chamada `Instalador_MarketSentry` será criada contendo o `.exe` pronto para uso.
+5.  Nessa pasta existirá um arquivo chamado `Iniciar_Sistema` para facilitar a inicialização do sistema.
 
 ---
 
@@ -102,8 +103,6 @@ Para testar os alertas sem utilizar sua conta de e-mail real, recomendamos o uso
 
 ## 🔮 Possíveis Melhorias (Roadmap)
 
-Aqui estão algumas sugestões para evoluir o projeto:
-
 * [ ] **Autenticação:** Adicionar login para proteger as configurações.
 * [ ] **Edição de ativos configurados:** Adicionar opção de editar ativos configurados.
 * [ ] **Integração com Telegram/WhatsApp:** Enviar alertas via Bot além do e-mail.
@@ -113,4 +112,4 @@ Aqui estão algumas sugestões para evoluir o projeto:
 ---
 
 Desenvolvido com ☕ e <br/>
-[![My Skills](https://skillicons.dev/icons?i=ts,cs,angular,html,css,sqlite)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=ts,cs,angular,html,css,sqlite,nodejs)](https://skillicons.dev)
