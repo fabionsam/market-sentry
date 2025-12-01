@@ -3,7 +3,7 @@ using MarketSentry.Infrastructure.Data;
 using MarketSentry.Infrastructure.Services;
 using MarketSentry.Worker;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
+using Polly;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,9 +24,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHttpClient("DefaultClient")
+    .AddTransientHttpErrorPolicy(policyBuilder =>
+        policyBuilder.WaitAndRetryAsync(
+            retryCount: 3,
+            sleepDurationProvider: retryAttempt =>
+                TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
+        )
+    );
+
 // 3. Configurar Injeção de Dependência para Serviços
 builder.Services.AddTransient<IEmailService, MailKitEmailService>();
-builder.Services.AddHttpClient();
+
 builder.Services.AddTransient<BrapiStockService>();
 builder.Services.AddTransient<HgBrasilStockService>();
 builder.Services.AddTransient<IStockService, SmartStockService>();

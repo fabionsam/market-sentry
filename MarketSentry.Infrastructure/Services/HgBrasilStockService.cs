@@ -17,7 +17,7 @@ namespace MarketSentry.Infrastructure.Services
         {
             try
             {
-                var client = _httpClientFactory.CreateClient();
+                var client = _httpClientFactory.CreateClient("DefaultClient");
                 client.BaseAddress = new Uri(baseUrl);
 
                 var api = RestService.For<IHgBrasilApi>(client);

@@ -19,7 +19,7 @@ namespace MarketSentry.Infrastructure.Services
             try
             {
                 // 1. Cria um cliente HTTP novo
-                var client = _httpClientFactory.CreateClient();
+                var client = _httpClientFactory.CreateClient("DefaultClient");
 
                 // 2. Define a URL base dinamicamente
                 client.BaseAddress = new Uri(baseUrl);
