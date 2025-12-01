@@ -1,0 +1,7 @@
+@use '@angular/material' as mat;
+
+.danger {
+  @include mat.button-overrides((
+    protected-container-color: #ff000073,
+  ));
+}

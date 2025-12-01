@@ -1,0 +1,129 @@
+@use '@angular/material' as mat;
+
+.trash-danger {
+    @include mat.icon-button-overrides((
+        icon-color: #ff0000d5,
+    ));
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stock-panel {
+  margin-bottom: 15px;
+  border-radius: 8px !important;
+  border-left: 6px solid #3f51b5; 
+  padding: 10px;
+
+  mat-expansion-panel-header {
+    height: 120px;
+  }
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .header-content1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding-right: 15px;
+    }
+    .header-content2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding-right: 15px;
+    }
+}
+
+.col-symbol {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  .symbol {
+    font-size: 26px;
+    font-weight: 800;
+    color: #333;
+    letter-spacing: -1px;
+  }
+  .badge {
+    font-size: 11px;
+    background: #e0e0e0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    width: fit-content;
+    color: #555;
+  }
+}
+
+.col-price {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  
+  .label { font-size: 10px; color: #888; text-transform: uppercase; }
+  .value { font-size: 22px; font-weight: 600; color: #0056b3; }
+  .time { font-size: 11px; color: #999; }
+}
+
+.col-targets {
+  display: flex;
+  gap: 20px;
+
+  .target {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 15px;
+    border-radius: 6px;
+    background: #f9f9f9;
+    height: 70px;
+    
+    mat-icon { font-size: 18px; width: 18px; height: 18px; margin-bottom: 2px; }
+    small { font-size: 9px; text-transform: uppercase; }
+    strong { font-size: 14px; }
+
+    &.buy { color: #2e7d32; background: #e8f5e9; } 
+    &.sell { color: #c62828; background: #ffebee; }
+  }
+}
+
+.chart-area {
+  position: relative;
+  
+  height: 350px;
+  min-height: 350px; 
+  
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.loading-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+  color: #666;
+  gap: 10px;
+  background-color: #f9f9f9; 
+  border-radius: 4px;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { 
+  100% { transform: rotate(360deg); } 
+}

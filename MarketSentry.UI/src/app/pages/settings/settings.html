@@ -1,0 +1,83 @@
+<div class="settings-container">
+  <div class="header">
+    <button mat-icon-button (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h1>Configurações do Sistema</h1>
+  </div>
+
+  <mat-card>
+    <mat-tab-group>
+      
+      <mat-tab label="Servidor de E-mail">
+        <div class="tab-content">
+          <form [formGroup]="smtpForm" (ngSubmit)="saveSmtp()">
+            <div class="row">
+              <mat-form-field appearance="outline">
+                <mat-label>Host SMTP (Ex: smtp.gmail.com)</mat-label>
+                <input matInput formControlName="host">
+              </mat-form-field>
+              
+              <mat-form-field appearance="outline" style="max-width: 100px;">
+                <mat-label>Porta</mat-label>
+                <input matInput type="number" formControlName="port">
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <mat-form-field appearance="outline">
+                <mat-label>Usuário</mat-label>
+                <input matInput formControlName="userName">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Senha</mat-label>
+                <input matInput type="password" formControlName="password">
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <mat-form-field appearance="outline">
+                <mat-label>Email do Remetente</mat-label>
+                <input matInput formControlName="senderEmail">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Nome do Remetente</mat-label>
+                <input matInput formControlName="senderName">
+              </mat-form-field>
+            </div>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="smtpForm.invalid">
+              Salvar Configurações
+            </button>
+          </form>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="APIs de Cotação">
+        <div class="tab-content">
+          <p class="info-text">APIs cadastradas no sistema:</p>
+          
+          <ul class="api-list">
+            @for (api of apiList(); track api.id) {
+              <li class="api-item">
+                <div class="api-info">
+                  <strong>{{ api.providerName }}</strong>
+                  <small>{{ api.baseUrl }}</small>
+                </div>
+                <div class="api-token" *ngIf="api.apiToken">
+                  Token configurado
+                </div>
+                </li>
+            }
+          </ul>
+          
+          <br>
+          <small>Para adicionar novas APIs, contate o administrador.</small>
+        </div>
+      </mat-tab>
+
+    </mat-tab-group>
+  </mat-card>
+</div>

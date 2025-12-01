@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; color: #333; }
+        .container { padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .alert-box-red { padding: 10px; background-color: #f8d7da; color: #721c24; font-weight: bold; }
+        .alert-box-green { padding: 10px; background-color: #d4edda; color: #155724; font-weight: bold; }
+        .price { font-size: 24px; color: #007bff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Alerta de Mercado: {{SYMBOL}}</h2>
+        <p>Olá,</p>
+        <p>O ativo <strong>{{SYMBOL}}</strong> atingiu o preço alvo.</p>
+        
+        <div class="{{CLASS_COLOR}}">
+            Ação Recomendada: {{ACTION}}
+        </div>
+        
+        <p class="price">Preço Atual: <span>{{CURRENT_PRICE}}</span></p>
+        <p>Data: {{DATE}}</p>
+        
+        <hr>
+        <small>Market Sentry Bot</small>
+    </div>
+</body>
+</html>

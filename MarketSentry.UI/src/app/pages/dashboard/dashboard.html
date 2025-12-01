@@ -1,0 +1,88 @@
+<div class="dashboard-header">
+  <h2>Monitoramento Ativo</h2>
+  <div class="actions">
+    <button mat-raised-button color="primary" (click)="openAddModal()">
+      + Novo Ativo
+    </button>
+  </div>
+</div>
+
+@if (loading()) {
+  <p>Carregando dados...</p>
+}
+
+@if (!loading() && configs().length > 0) {
+  <mat-accordion multi="true">
+    
+    @for (config of configs(); track config.id) {
+      <mat-expansion-panel (opened)="onExpand(config)" (closed)="onClose(config)" class="stock-panel">
+        
+        <mat-expansion-panel-header>
+          <div class="header">
+            <div class="header-content1">
+                <span class="email">{{ config.emailNotification }}</span>
+            </div>
+            <div class="header-content2">
+                <div class="col-symbol">
+                  <span class="symbol">{{ config.symbol }}</span>
+                  <span class="badge">{{ config.providerName }}</span>
+                </div>
+    
+                <div class="col-price">
+                  <span class="label">Último Registro</span>
+                  <span class="value">
+                    @if (config.currentPrice) {
+                      {{ config.currentPrice | currency:'BRL' }}
+                    } @else {
+                      ...
+                    }
+                  </span>
+                  
+                  @if (config.lastUpdate) {
+                    <span class="time">
+                      {{ config.lastUpdate | date:'dd/MM/yyyy HH:mm:ss' }}
+                    </span>
+                  }
+                </div>
+    
+                <div class="col-targets">
+                  <div class="target buy">
+                    <mat-icon>arrow_downward</mat-icon> 
+                    <small>Compra</small>
+                    <strong>{{ config.priceBuy | currency:'BRL' }}</strong>
+                  </div>
+                  <div class="target sell">
+                    <mat-icon>arrow_upward</mat-icon> 
+                    <small>Venda</small>
+                    <strong>{{ config.priceSell | currency:'BRL' }}</strong>
+                  </div>
+                </div>
+    
+                <div class="col-actions" [ngStyle]="{ 'marginTop': '-24px', 'marginRight': '10px' }">
+                  <button mat-icon-button class="trash-danger" (click)="deleteStock($event, config)" matTooltip="Excluir Ativo">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+            </div>
+          </div>
+        </mat-expansion-panel-header>
+
+        <div class="chart-area">
+            @if (chartDataMap[config.symbol]) {
+                <canvas baseChart 
+                [data]="chartDataMap[config.symbol]" 
+                [options]="chartOptionsMap[config.symbol]" 
+                [type]="'line'">
+                </canvas>
+            } @else {
+                <div class="loading-chart">
+                <mat-icon class="spin">sync</mat-icon> Carregando histórico...
+                </div>
+            }
+        </div>
+
+      </mat-expansion-panel>
+    }
+
+  </mat-accordion>
+}
